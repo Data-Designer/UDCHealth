@@ -43,6 +43,9 @@ data
 
 ```powershell
 # run the main file
+# please set pretrain=True (first, sencod stage) 
+# please set tuning=True (third stage)
+
 python main.py
 ```
 
