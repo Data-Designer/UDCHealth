@@ -43,9 +43,12 @@ data
 
 ```powershell
 # run the main file
+# change config.py
+config = vars(UDCDIAGConfig)
+config = {k:v for k,v in config.items() if not k.startswith('__')}
+
 # please set pretrain=True (first, sencod stage) 
 # please set tuning=True (third stage)
-
 python main.py
 ```
 
