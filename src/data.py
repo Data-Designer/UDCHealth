@@ -278,7 +278,7 @@ def disease_prediction_mimic3_fn_wc(patient: Patient):
     samples[0]["drugs_hist"] = [samples[0]["drugs_hist"]]
     samples[0]["conditions_wc"] = [samples[0]["conditions_wc"]]
 
-    for i in range(1, len(samples)): # 第二次，到第N次，一个patient创建一个samples数据，迭代创建
+    for i in range(1, len(samples)): #
         samples[i]["conditions"] = samples[i - 1]["conditions"] + [
             samples[i]["conditions"]
         ]
@@ -1034,11 +1034,4 @@ if __name__ == '__main__':
     id_index = id_tokenizer.convert_tokens_to_indices(['102', '103'])
     print(id_index)
 
-    #
-    # train_dataset, val_dataset, test_dataset = split_by_patient(
-    #     sample_dataset, [config['RATIO'], (1-config['RATIO'])/2, (1-config['RATIO'])/2]
-    # )
-    # train_dataloader = get_dataloader(train_dataset, batch_size=1, shuffle=True) # 得明确一下其是否是经过standarlized
-    # val_dataloader = get_dataloader(val_dataset, batch_size=1, shuffle=False)
-    # test_dataloader = get_dataloader(test_dataset, batch_size=1, shuffle=False)
 

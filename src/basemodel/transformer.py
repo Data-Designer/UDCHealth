@@ -88,26 +88,13 @@ class RecLayer(nn.Module):
             labels: torch.Tensor,
             label_index: Optional[torch.Tensor] = None,
     ):
-        # mul_pred_prob = y_prob.T @ y_prob  # B,D-> B,D (voc_size, voc_size)，感觉这里会有问题。过大的batchsize会有问题。
-        # ddi_loss = 0 # (mul_pred_prob * ddi_adj).sum() / (ddi_adj.shape[0] ** 2) # 这里感觉也有问题，是乘以固定值 0.0005
 
-        # y_pred = y_prob.detach().cpu().numpy()
-        # y_pred[y_pred >= 0.5] = 1
-        # y_pred[y_pred < 0.5] = 0 # 优化同步
-        # y_pred = [np.where(sample == 1)[0] for sample in y_pred]
-
-        loss_cls = binary_cross_entropy_with_logits(logits, labels) # + loss_focal(logits, labels) #+ self.ddi_weight * ddi_loss # 似乎不用
-        # loss_cls = self.bceloss(y_prob, labels).mean() # + loss_focal(logits, labels) #+ self.ddi_weight * ddi_loss # 似乎不用
+        loss_cls = binary_cross_entropy_with_logits(logits, labels) #
 
         if self.multiloss_weight > 0 and label_index is not None:
             loss_multi = multilabel_margin_loss(y_prob, label_index)
             loss_cls = self.multiloss_weight * loss_multi + (1 - self.multiloss_weight) * loss_cls
 
-        # cur_ddi_rate = ddi_rate_score(y_pred, ddi_adj.cpu().numpy()) # 所有用户的所有ddi
-        # if cur_ddi_rate > self.target_ddi:
-        #     loss = loss_cls
-        # else:
-        #     loss = loss_cls
 
         return loss_cls
 

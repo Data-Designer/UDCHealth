@@ -332,7 +332,6 @@ def off_diagonal(x):
 
 
 def get_atc_name(level):
-    """for atc, 这里很奇怪，level为4的话和level为3的设定一致"""
     level = level + 1
     code_sys = ATC(refresh_cache=True)  # 第一次需要
     name_map = {}

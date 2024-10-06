@@ -6,7 +6,7 @@
 # Time       ：3/7/2024 11:29 am
 # Author     ：xxxxx
 # version    ：python 
-# Description：nohup python main_rec.py > miv.log 2>&1 &;   nohup python main_diag.py > graph_miv.log 2>&1 &
+# Description：
 """
 pcf_config = {
     'Transformer' : {
@@ -16,10 +16,10 @@ pcf_config = {
         'DIM': 128,
         'HIDDEN':128,
         'LR': 1e-3,
-        'BATCH': 16, # 太小容易出问题，没有那么多的cond
+        'BATCH': 16,
         'RNN_LAYERS': 2,
         'DROPOUT': 0.1,
-        'WD': 1e-4,#5e-4, 卧槽，这个居然有效, 不对，还是那个drop有效； 对mIMIc无效
+        'WD': 1e-4,
         'MULTI': 0.0,
         'DDI': 0.08,
         'MAXSEQ': 10,
@@ -117,7 +117,7 @@ pcf_config = {
 }
 
 
-pcf_rec_config = { #  batch=4好点
+pcf_rec_config = {
     'Transformer' : {
         'EPOCH': 30,
         'FINE_EPOCH': 50,
@@ -283,12 +283,12 @@ pcf_rec_config = { #  batch=4好点
 class UDCDIAGConfig(): # 不要有drugs
     """DRL config"""
     # data_info parameter
-    DEV = False # 是否使用sample子集
+    DEV = False
     MODEL = "UDC"
     TASK = 'DIAG'
     DATASET = 'MIV'
     PCF_MODEL = 'Transformer' # StratMed准备老长时间了。
-    FEATURE = ['conditions', 'procedures', 'drugs'] # drug_HIST两层含义, 只让他看conditions和procedures
+    FEATURE = ['conditions', 'procedures', 'drugs']
     LABEL = 'labels'
     PCF_CONFIG = pcf_config[PCF_MODEL]
     PLM_MODEL = 'Sap-BERT' #不同的对应不同版本的transofmers(4.28.1) 4.44.2
@@ -312,10 +312,10 @@ class UDCDIAGConfig(): # 不要有drugs
     WD = 5e-4
 
     # prepro
-    REFK = 20 # 设置为数据集的avg label
+    REFK = 20
     CONDK = 10
-    N_CODEBOOK = 4 # code level改为1
-    N_EMBED = 16 # 3对应的是16
+    N_CODEBOOK = 4
+    N_EMBED = 64
 
     # log
     LOGDIR = '/home/xxxx/UDCHealth/log/ckpt/'
@@ -336,9 +336,9 @@ class UDCDRECConfig():
     PLM_MODEL = 'Sap-BERT'
 
     ATCLEVEL = 3
-    RATIO = 0.6 # train-test split； 感觉是不是要放小这个东西,只有这样比较多。
+    RATIO = 0.6
     THRES = 0.4 # pred threshold
-    RARE_THRES = 0.8 # rare disease threshold； 设定0.8，因为绝大多数的交互全是常见病，那么，但是设置warm cold的时候，将中间派也替换掉。
+    RARE_THRES = 0.8 # rare disease threshold； 
 
     # train parameter
     SEED = 528

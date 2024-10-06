@@ -6,7 +6,7 @@
 # Time       ：3/7/2024 11:29 am
 # Author     ：XXXXXXX
 # version    ：python 
-# Description：several specific layer; thanks CMG (https://github.com/haihuangcode/CMG/blob/master/code/src/pretrain.py#L586)
+# Description：several specific layer;
 """
 import copy
 import torch

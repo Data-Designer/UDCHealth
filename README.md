@@ -3,11 +3,13 @@
 
 ## About Our Work
 
-Update: 2024/09/26: We have created a repository for the paper titled *Unveiling Discrete Clues: Superior Healthcare Predictions for Rare Diseases*, which has been submitted to the *WWW 2025*. In this repository, we offer the original sample datasets, preprocessing scripts, and algorithm files to showcase the reproducibility of our work.
+Update: 2024/10/07: We have created a repository for the paper titled *Unveiling Discrete Clues: Superior Healthcare Predictions for Rare Diseases*, which has been submitted to the *WWW 2025*. In this repository, we offer the original sample datasets, preprocessing scripts, and algorithm files to showcase the reproducibility of our work.
 
-![image-20240926141140345](https://s2.loli.net/2024/09/26/qQiB2ObLJzvRCjy.png)
+![image-20241006134559836](https://s2.loli.net/2024/10/06/3Fwd6mni7sA8ft1.png)
 
-![image-20240926141209183](https://s2.loli.net/2024/09/26/7J56M3YEdcGgBm9.png)
+![image-20241006134532013](https://s2.loli.net/2024/10/06/sTJOArhuNHFkMy7.png)
+
+
 
 ## Requirements
 

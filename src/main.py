@@ -193,31 +193,7 @@ def run_single_config(pretrain=False, tuning=False, exp_num=''):
 
 
 
-    # save embedding file
-    # if config['JOINT']:
-    #     raw_embeddings = pcf_model.embeddings['conditions'].weight.data
-    #     # cond_common_recon, cond_rare_recon = model.get_drl_input_for_analysis(raw_embeddings.shape[0])
-    #     # save_pickle({'com': cond_common_recon, 'rare': cond_rare_recon},root_to + 'emb_ana_pre.pkl')
-    #     file = load_pickle(root_to + 'emb_ana_pre.pkl')
-    #     cond_common_recon, cond_rare_recon = file['com'], file['rare']
-    #     rarest = list(dict(disease['rare_disease']).keys()) # filter_drl_items
-    #     # print(rarest)
-    #     map = model.pcf_model.feat_tokenizers['conditions'].vocabulary.token2idx
-    #     # print(map)
-    #     rarest = [map[i] for i in rarest]
-    #     # print(rarest)
-    #     rare_repr = raw_embeddings[rarest]
-    #     rare_repr_map =  cond_rare_recon[rarest]
-    #     common_repr_index = set(list(range(raw_embeddings.shape[0])))-set(rarest)
-    #     common_repr = cond_common_recon[list(common_repr_index)]
-    #     # label = torch.cat([torch.ones(rare_repr.shape[0]), torch.zeros(common_repr_map.shape[0])], dim=0)
-    #
-    #     save_pickle({'common':common_repr,
-    #                     'rare_before':rare_repr,
-    #                  'rare_after':rare_repr_map,
-    #                  }, root_to + 'emb_ana.pkl')
-    # else:
-    #     print("Must set config[JOINT]=True!")
+
 
 
 
