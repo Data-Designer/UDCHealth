@@ -3,7 +3,7 @@
 
 ## About Our Work
 
-Update: 2024/10/07: We have created a repository for the paper titled *Unveiling Discrete Clues: Superior Healthcare Predictions for Rare Diseases*, which has been submitted to the *WWW 2025*. In this repository, we offer the original sample datasets, preprocessing scripts, and algorithm files to showcase the reproducibility of our work.
+Update: 2025/01/22: We have created a repository for the paper titled *Unveiling Discrete Clues: Superior Healthcare Predictions for Rare Diseases*, which has been accepted by the *WWW 2025*. In this repository, we offer the original sample datasets, preprocessing scripts, and algorithm files to showcase the reproducibility of our work.
 
 ![image-20241006134559836](https://s2.loli.net/2024/10/06/3Fwd6mni7sA8ft1.png)
 
@@ -13,7 +13,6 @@ Update: 2024/10/07: We have created a repository for the paper titled *Unveiling
 
 ## Requirements
 
-- openai==1.3.5
 - torch==1.13.1+cu117
 - dgl==1.1.2
 - pyhealth==1.1.4
@@ -56,4 +55,4 @@ python main.py
 
 ## Acknowledge & Contact
 
-We will update the contact information and corresponding issue links after the review process is completed.
+Please feel free to contact czhaobo@connect.ust.hk for assistance or collaboration.
